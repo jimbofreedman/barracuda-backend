@@ -1,8 +1,8 @@
 version: '3'
 
 volumes:
-  local_postgres_data: {}
-  local_postgres_data_backups: {}
+  barracuda_postgres_data: {}
+  barracuda_postgres_data_backups: {}
 
 services:
   django: &django
@@ -28,8 +28,8 @@ services:
       dockerfile: ./compose/production/postgres/Dockerfile
     image: barracuda_backend_production_postgres
     volumes:
-      - local_postgres_data:/var/lib/postgresql/data
-      - local_postgres_data_backups:/backups
+      - barracuda_postgres_data:/var/lib/postgresql/data
+      - barracuda_postgres_data_backups:/backups
     env_file:
       - ./.envs/.local/.postgres
 
