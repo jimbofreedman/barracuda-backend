@@ -221,3 +221,16 @@ sentry_sdk.init(
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+CORS_ORIGIN_WHITELIST = (
+    env("FRONTEND_DOMAIN")
+)
+
+CSRF_TRUSTED_ORIGINS = (
+    env("FRONTEND_DOMAIN")
+)
+
+CSRF_COOKIE_DOMAIN = env("COOKIE_DOMAIN")
+CSRF_COOKIE_HTTPONLY = False
+
+SESSION_COOKIE_DOMAIN = env("COOKIE_DOMAIN")
+

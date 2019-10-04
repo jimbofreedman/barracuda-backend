@@ -27,6 +27,9 @@ services:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
     image: barracuda_backend_production_postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backups:/backups
     env_file:
       - ./.envs/.local/.postgres
 
